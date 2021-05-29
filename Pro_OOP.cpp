@@ -1,4 +1,4 @@
-// Writted by Ahmed Sami Elmoslmany. 21/05/2021. 
+// Writted by Ahmed Sami Elmoslmany..start 21/05/2021 at 2PM..Done 21/05/2021 at 8PM. 
 #include <iostream>
 using namespace std;
 int numOfstudent = 0, numOfoperation, i = 0, foundOrnot, EditId, j = 0, avrMath1 = 0, avrMath2 = 0, avrIS = 0, avrCS = 0, avrPL = 0,
@@ -7,18 +7,82 @@ string firstname, lastname;
 char gender;
 
 class Score{
-public:
+private:
     int Score[5];
-
-};
-
-class Date{
 public:
+	
+	//Setters
+	void setScore0(int score0)
+    {
+        Score[0] = score0;
+    }
+    void setScore1(int score1)
+    {
+        Score[1] = score1;
+    }
+    void setScore2(int score2)
+    {
+        Score[2] = score2;
+    }
+    void setScore3(int score3)
+    {
+        Score[3] = score3;
+    }
+    void setScore4(int score4)
+    {
+        Score[4] = score4;
+    }
+    
+    //Getters
+    int getScore0(){
+        return Score[0];
+    }
+    int getScore1(){
+        return Score[1];
+    }
+    int getScore2(){
+        return Score[2];
+    }
+    int getScore3(){
+        return Score[3];
+    }
+    int getScore4(){
+        return Score[4];
+    }
+};
+class Date{
+private:
     int D;
     int M;
     int Y;
+public:
+	
+	//Setters
+	void setDay(int day)
+    {
+        D = day;
+    }
+    void setMonth(int month)
+    {
+        M = month;
+    }
+    void setYear(int year)
+    {
+        Y = year;
+    }    
+    
+    
+    //Getters
+    int getDay(){
+        return D;
+    }
+    int getMonth(){
+        return M;
+    }
+    int getYear(){
+        return Y;
+    }
 };
-
 class Student : public Score , public Date{
 private:
     int ID,Old_ID;
@@ -26,6 +90,8 @@ private:
     string LastName;
     char Gender;
 public:
+	
+	//Setters
     void setId(int id)
     {
         ID = id;
@@ -46,38 +112,8 @@ public:
     {
         Gender = gender;
     }
-    void setDay(int day)
-    {
-        D = day;
-    }
-    void setMonth(int month)
-    {
-        M = month;
-    }
-    void setYear(int year)
-    {
-        Y = year;
-    }
-    void setScore0(int score0)
-    {
-        Score[0] = score0;
-    }
-    void setScore1(int score1)
-    {
-        Score[1] = score1;
-    }
-    void setScore2(int score2)
-    {
-        Score[2] = score2;
-    }
-    void setScore3(int score3)
-    {
-        Score[3] = score3;
-    }
-    void setScore4(int score4)
-    {
-        Score[4] = score4;
-    }
+    
+    
 
 
     //Getters
@@ -96,30 +132,8 @@ public:
     char getGender(){
         return Gender;
     }
-    int getDay(){
-        return D;
-    }
-    int getMonth(){
-        return M;
-    }
-    int getYear(){
-        return Y;
-    }
-    int getScore0(){
-        return Score[0];
-    }
-    int getScore1(){
-        return Score[1];
-    }
-    int getScore2(){
-        return Score[2];
-    }
-    int getScore3(){
-        return Score[3];
-    }
-    int getScore4(){
-        return Score[4];
-    }
+    
+    
     void Add();
     void Search();
     void Print();
@@ -128,7 +142,6 @@ public:
 };
 Student st[100];
 main()
-
 {
 
     do
@@ -181,7 +194,6 @@ main()
 
     return 0;
 }
-
 void Student::Add()
 {
     bool was = true;
@@ -240,11 +252,10 @@ void Student::Add()
         }
         else
         {
-           cout<<"Stdent is already in database please add new student with direent ID\n\n";
+           cout<<"Student is already in database please add new student with different ID\n\n";
         }
                 
 }
-//Search
 void Student::Search()
 {
    
@@ -273,8 +284,6 @@ void Student::Search()
          cout<<"not found"<<endl<<endl;
      }
 }
-
-// Add
 void Student::Print()
 {
 
@@ -293,8 +302,6 @@ void Student::Print()
              << endl;
     }
 }
-
-//Avrage of Scores
 void Student::AvrScore(){
     
             cout<<"Total number of student in DataBase: "<< numOfstudent<<endl;
@@ -320,8 +327,6 @@ void Student::AvrScore(){
             cout << endl
                  << endl;
 }
-
-//EditScore
 void Student::Edit_Score()
 {
     
